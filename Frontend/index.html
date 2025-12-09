@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-gradient" id="bg-gradient"></div>
+    <div class="bubbles-container" id="bubbles-container"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Mood Predictor <i class="fas fa-heart"></i></h1>
+            <p>Paste your partner's message to reveal the hidden emotions!</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="chat-bubble-input">
+                    <textarea id="message-input" placeholder="Type or paste a message here..."></textarea>
+                </div>
+                <button id="analyze-btn" class="heart-btn">
+                    <i class="fas fa-search-heart"></i> Analyze
+                </button>
+            </div>
+
+            <div id="result-section" class="result-section hidden">
+                <div class="dominant-card">
+                    <div class="emoji-display" id="mood-emoji">🤔</div>
+                    <h2 id="mood-label">Neutral</h2>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidence-fill"></div>
+                    </div>
+                    <p id="confidence-text">Confidence: 0%</p>
+                    <p id="mood-advice" class="mood-advice">Waiting for input...</p>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-message hidden">
+                <p>Oops! Something went wrong.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
