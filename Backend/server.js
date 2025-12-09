@@ -27,4 +27,13 @@ app.post('/analyse',async (req,res,next)=>{
   res.json(top);
 });
 
+app.use((err,req,res,next)=>{
+  if (err.status){
+    res.status(err,status).json({msg: err.message});
+  }
+  else{
+    res.status(500).json({msg: err.message});
+  }
+});
+
 app.listen(port,()=>{console.log('Server running...')});
